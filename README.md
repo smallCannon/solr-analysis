@@ -68,13 +68,19 @@ vim {solr_unzip_directory}/server/solr/{solr_instance_directory}/conf/schema.xml
 
 ### 用户词典
 
-如果需要额外添加用户词典，就需要填写 userDict，不需要就不用填写 userDict，说一下 userDict 的相对路径方式，相对路径都是开始于 `{solr_unzip_directory}/server`，针对上面 userDict 的值是 `solr/{solr_instance_directory}/conf/jieba.txt`，绝对路径就是 `{solr_unzip_directory}/server/solr/{solr_instance_directory}/conf/jieba.txt`。
+如果需要额外添加用户词典，就需要填写 userDict，不需要就不用填写 userDict。
+
+说一下 userDict 的相对路径方式：
+
+* 相对路径都是开始于 `{solr_unzip_directory}/server`
+* 针对上面 userDict 的值是 `solr/{solr_instance_directory}/conf/jieba.txt`
+* 绝对路径就是 `{solr_unzip_directory}/server/solr/{solr_instance_directory}/conf/jieba.txt`
 
 ```
 vim {solr_unzip_directory}/server/solr/{solr_instance_directory}/conf/jieba.txt
 ```
 
-添加需要的词，每一行一个，第一列为词语，然后空格，第二列为词频，词语和词频都是必填项。
+添加需要的词，一行一行添加，第一列为词语，然后空格，第二列为词频，词语和词频都是必填项。
 
 ```
 湾仔码头 3
