@@ -70,11 +70,18 @@ vim {solr_unzip_directory}/server/solr/{solr_instance_directory}/conf/schema.xml
 
 如果需要额外添加用户词典，就需要填写 userDict，不需要就不用填写 userDict。
 
-说一下 userDict 的相对路径方式：
+填写 userDict 的相对路径方式：
 
 * 相对路径都是开始于 `{solr_unzip_directory}/server`
 * 针对上面 userDict 的值是 `solr/{solr_instance_directory}/conf/jieba.txt`
 * 绝对路径就是 `{solr_unzip_directory}/server/solr/{solr_instance_directory}/conf/jieba.txt`
+
+填写 userDict 的绝对路径方式，此方法在生产环境很有用，solr 安装目录和 solr home 目录通常都不在一起：
+
+* userDict 的值是 `${solr.solr.home}/{solr_instance_directory}/conf/jieba.txt`
+* `schema.xml` 中可以引用环境变量 `solr.solr.home`，其值是 `{solr_unzip_directory}/server／solr`
+* 最终也是 `{solr_unzip_directory}/server/solr/{solr_instance_directory}/conf/jieba.txt`
+
 
 ```
 vim {solr_unzip_directory}/server/solr/{solr_instance_directory}/conf/jieba.txt

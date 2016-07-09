@@ -30,6 +30,7 @@ public class JiebaSegmenterAdapter {
 			// 从 Solr 解压文件目录下 server 目录开始
 			// 如，解压目录为 /Users/danjiang/webapps/solr-5.5.2，userDict 配置为 solr/chinese/conf/jieba.txt
 			// 下面 Path 绝对路径为 /Users/danjiang/webapps/solr-5.5.2/server/solr/chinese/conf/jieba.txt
+			// 当然 userDict 也可以配置绝对路径
 			Path path = FileSystems.getDefault().getPath(userDict);
 			WordDictionary wordDict = WordDictionary.getInstance();
 			wordDict.loadUserDict(path);
